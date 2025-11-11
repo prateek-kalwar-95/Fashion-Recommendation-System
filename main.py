@@ -106,7 +106,7 @@ for idx, row in fashion_df.iterrows():
     print(f"   Description: {row['description']}")
     print(f"   Vibes: {', '.join(row['vibes'])}")
 
-#add you openAi or gemini API_KEY
+#add your gemini API_KEY
 genai.configure(api_key="API_KEY")
 
 def get_embedding_gemini(text: str, model: str = "models/embedding-001") -> List[float]:
@@ -342,5 +342,6 @@ print(f"Max latency: {np.max(test_results['latencies']) * 1000:.2f}ms")
 print(f"Average similarity score: {np.mean(test_results['avg_scores']):.3f}")
 print(
     f"\nQueries with 'Good' matches (>0.7): {sum(1 for s in test_results['avg_scores'] if s > 0.7)}/{len(test_results['queries'])}")
+
 
 
